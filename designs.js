@@ -4,8 +4,10 @@
 // When size is submitted by the user, call makeGrid()
 
 function makeGrid() {
-  // save the selected grid dimensions
-  // save the selected color
+  var rows = $('#inputHeight').val();
+  var columns = $('#inputWidth').val();
+  var cellColor = $('#colorPicker').val();
+
   // create the table based on the grid values
     // essentially, I need to define what each row will look like
       // the row will have the selected number of columns
