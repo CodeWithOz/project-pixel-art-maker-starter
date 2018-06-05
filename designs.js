@@ -12,6 +12,8 @@ function makeGrid() {
   cellColor = $('#colorPicker').val();
 
   // create the table based on the grid values
+    // no need for a `thead`, go straight to `tbody`
+    // <tbody> needs to come before the rows
     // essentially, I need to define what each row will look like
       // the row will have the selected number of columns
     // then replicate it as many times as the selected number of rows
