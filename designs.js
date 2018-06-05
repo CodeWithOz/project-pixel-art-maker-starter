@@ -1,12 +1,15 @@
+var cellColor;
 // Select color input
 // Select size input
 
 // When size is submitted by the user, call makeGrid()
 
 function makeGrid() {
-  var rows = $('#inputHeight').val();
-  var columns = $('#inputWidth').val();
-  var cellColor = $('#colorPicker').val();
+  var rows, columns;
+
+  rows = $('#inputHeight').val();
+  columns = $('#inputWidth').val();
+  cellColor = $('#colorPicker').val();
 
   // create the table based on the grid values
     // essentially, I need to define what each row will look like
