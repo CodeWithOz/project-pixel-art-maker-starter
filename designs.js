@@ -5,11 +5,9 @@ $('#colorPicker').change(function() {
   cellColor = $( this ).val();
 });
 
-// Select size input
+$('#sizePicker').submit(makeGrid);
 
-// When size is submitted by the user, call makeGrid()
-
-function makeGrid() {
+function makeGrid(event) {
   var rows, columns;
 
   rows = $('#inputHeight').val();
