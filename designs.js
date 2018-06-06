@@ -9,6 +9,7 @@ $(document).ready(function() {
   $('#sizePicker').submit(makeGrid);
 
   function makeGrid(event) {
+    event.preventDefault();
     var rows, columns;
 
     rows = $('#inputHeight').val();
