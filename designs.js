@@ -1,5 +1,10 @@
 var cellColor;
-// Select color input
+
+cellColor = $('#colorPicker').val();
+$('#colorPicker').change(function() {
+  cellColor = $( this ).val();
+});
+
 // Select size input
 
 // When size is submitted by the user, call makeGrid()
@@ -9,7 +14,6 @@ function makeGrid() {
 
   rows = $('#inputHeight').val();
   columns = $('#inputWidth').val();
-  cellColor = $('#colorPicker').val();
 
   // create the table based on the grid values
     // no need for a `thead`, go straight to `tbody`
