@@ -17,8 +17,15 @@ $(document).ready(function() {
 
     // create the table based on the grid values
     $('table').append('<tbody></tbody>');
-      // then replicate it as many times as the selected number of rows
-      // then use event delegation to add necessary event listeners on the parent table element
+    // then use event delegation to add necessary event listeners on the parent table element
+  }
+
+  function createGrid(rows, columns) {
+    var grid = '';
+    for (var counter = 0; counter < rows; counter++) {
+      grid += createTableRow(columns);
+    }
+    return grid;
   }
 
   function createTableRow(columns) {
