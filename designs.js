@@ -8,6 +8,7 @@ $(document).ready(function() {
 
   $('#sizePicker').submit(makeGrid);
   $('#sizePicker').on('reset', function(event) {
+    event.preventDefault();
     $( 'table td' ).css('backgroundColor', 'white');
   });
 
