@@ -28,6 +28,23 @@ $(document).ready(function() {
     // create the table based on the grid values
     $('table').append('<tbody></tbody>');
     $('tbody').append(createGrid(rows, columns));
+    
+    function createGrid(rows, columns) {
+      var grid = '';
+      for (var counter = 0; counter < rows; counter++) {
+        grid += createTableRow(columns);
+      }
+      return grid;
+    }
+
+    function createTableRow(columns) {
+      var tableRow = '<tr>';
+      for (var counter = 0; counter < columns; counter++) {
+        tableRow += '<td></td>';
+      }
+      tableRow += '</tr>';
+      return tableRow;
+    }
 
     // https://stackoverflow.com/a/20831728/7987987 is the source of this idea
     // drag event consists of mousedown, mousemove, and mouseup
@@ -49,22 +66,5 @@ $(document).ready(function() {
       // so I had to try to account for it, and it's still not perfect :'(.
       $('table').off('mousemove mouseup', 'td');
     });
-  }
-
-  function createGrid(rows, columns) {
-    var grid = '';
-    for (var counter = 0; counter < rows; counter++) {
-      grid += createTableRow(columns);
-    }
-    return grid;
-  }
-
-  function createTableRow(columns) {
-    var tableRow = '<tr>';
-    for (var counter = 0; counter < columns; counter++) {
-      tableRow += '<td></td>';
-    }
-    tableRow += '</tr>';
-    return tableRow;
   }
 });
