@@ -17,6 +17,7 @@ $(document).ready(function() {
 
     // create the table based on the grid values
     $('table').append('<tbody></tbody>');
+    $('tbody').append(createGrid(rows, columns));
     // then use event delegation to add necessary event listeners on the parent table element
   }
 
