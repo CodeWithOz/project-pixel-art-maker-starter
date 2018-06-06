@@ -8,8 +8,7 @@ $(document).ready(function() {
 
   $('#sizePicker').submit(makeGrid);
   $('#sizePicker').on('reset', function(event) {
-    // loop through and clear the form
-    // or just set the background of each cell to white
+    $( 'table td' ).css('backgroundColor', 'white');
   });
 
   function makeGrid(event) {
