@@ -28,7 +28,7 @@ $(document).ready(function() {
     // create the table based on the grid values
     $('table').append('<tbody></tbody>');
     $('tbody').append(createGrid(rows, columns));
-    
+
     function createGrid(rows, columns) {
       var grid = '';
       for (var counter = 0; counter < rows; counter++) {
@@ -60,11 +60,17 @@ $(document).ready(function() {
     // mouseup event handlers need to be detached once they're no longer needed
     // so I remove them when the mouse either
       // (1) leaves the table (mouseleave)
-      // (2) completes the drag motion within the table (mouseup)
+      // (2) completes the drag motion within the table (mouseup), or
       // (3) activates the drag event of the Drag and Drop API. This third one
       // was really just an unexpected quirk that I discovered while testing,
-      // so I had to try to account for it, and it's still not perfect :'(.
+      // so I had to try to account for it.
       $('table').off('mousemove mouseup', 'td');
+    });
+    $('table').on('drag', function(event) {
+      // the drag event will sometimes coincide with (and override) the
+      // drag-and-draw effect I want to create, so I found it better to also
+      // deactivate `drag` when it fires
+      event.preventDefault();
     });
   }
 });
