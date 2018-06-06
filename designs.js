@@ -13,6 +13,12 @@ $(document).ready(function() {
 
   function makeGrid(event) {
     event.preventDefault();
+
+    // remove current form if one exists
+    if ($('tbody').length > 0) {
+      $('tbody').remove();
+    }
+
     var rows, columns;
 
     rows = $('#inputHeight').val();
