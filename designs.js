@@ -21,7 +21,7 @@ $(document).ready(function() {
       $('table').prev().after(warningParagraph);
     }
 
-    // remove current form if one exists
+    // remove current grid if one exists
     if ($('tbody').length > 0) {
       $('tbody').remove();
     }
