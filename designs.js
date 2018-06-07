@@ -78,7 +78,7 @@ $(document).ready(function() {
 
     // scroll to top of table
     $('body, html').animate({
-      scrollTop: $('table').prev().offset().top
+      scrollTop: $('table').prevAll('.canvasSubheading').offset().top
     });
   }
 
