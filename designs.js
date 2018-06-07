@@ -21,6 +21,13 @@ $(document).ready(function() {
     rows = $('#inputHeight').val();
     columns = $('#inputWidth').val();
 
+    // add touchscreen warning
+    var warningParagraph = '<p><small class="text-muted"><span class="';
+    warningParagraph += 'text-danger font-italic">Note</span>: This grid ';
+    warningParagraph += 'is currently optimized for mouse displays - ';
+    warningParagraph += 'touchscreens may not work as expected.</small></p>';
+    $('table').prev().after(warningParagraph);
+
     // create the table based on the grid values
     $('table').append('<tbody></tbody>');
     $('tbody').append(createGrid(rows, columns));
