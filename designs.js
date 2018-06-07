@@ -67,6 +67,7 @@ $(document).ready(function() {
       // the drag event of the Drag and Drop API will sometimes coincide
       // with (and override) the drag-and-draw effect I want to create, so
       // I also deactivate `dragstart` when it fires
+      // see https://stackoverflow.com/a/13745199/7987987
       event.preventDefault();
       return false;
     });
