@@ -68,6 +68,11 @@ $(document).ready(function() {
       event.preventDefault();
       return false;
     });
+
+    // scroll to top of table
+    $('body, html').animate({
+      scrollTop: $('table').prev().offset().top
+    });
   }
 
   $('#sizePicker').on('reset', function(event) {
