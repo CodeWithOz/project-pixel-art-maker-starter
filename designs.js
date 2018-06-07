@@ -55,22 +55,20 @@ $(document).ready(function() {
       });
     });
 
-    $('table').on('drag mouseleave mouseup', function(event) {
+    $('table').on('mouseleave mouseup', function(event) {
     // for performance as recommended by the jQuery docs, the mousemove and
     // mouseup event handlers need to be detached once they're no longer needed
     // so I remove them when the mouse either
-      // (1) leaves the table (mouseleave)
-      // (2) completes the drag motion within the table (mouseup), or
-      // (3) activates the drag event of the Drag and Drop API. This third one
-      // was really just an unexpected quirk that I discovered while testing,
-      // so I had to try to account for it.
+      // (1) leaves the table (mouseleave), or
+      // (2) completes the drag motion within the table (mouseup)
       $('table').off('mousemove mouseup', 'td');
     });
-    $('table').on('drag', function(event) {
-      // the drag event will sometimes coincide with (and override) the
-      // drag-and-draw effect I want to create, so I found it better to also
-      // deactivate `drag` when it fires
+    $('table').on('dragstart', function(event) {
+      // the drag event of the Drag and Drop API will sometimes coincide
+      // with (and override) the drag-and-draw effect I want to create, so
+      // I also deactivate `dragstart` when it fires
       event.preventDefault();
+      return false;
     });
   }
 });
