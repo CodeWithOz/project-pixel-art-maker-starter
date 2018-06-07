@@ -1,7 +1,7 @@
+# Pixel Art Maker Project
+
 ## Live Demo
 [Click here](https://codewithoz.github.io/project-pixel-art-maker-starter/)
-
-# Pixel Art Maker Project
 
 ## Table of Contents
 
