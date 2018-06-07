@@ -11,6 +11,16 @@ $(document).ready(function() {
   function makeGrid(event) {
     event.preventDefault();
 
+    // add touchscreen warning if none exists
+    if ($('.warning').length < 1) {
+      var warningParagraph = '<p><small class="warning text-muted"><span ';
+      warningParagraph += 'class="text-danger font-italic">Note</span>: ';
+      warningParagraph += 'This grid is currently optimized for mouse ';
+      warningParagraph += 'displays - touchscreens may not work as expected';
+      warningParagraph += '.</small></p>';
+      $('table').prev().after(warningParagraph);
+    }
+
     // remove current form if one exists
     if ($('tbody').length > 0) {
       $('tbody').remove();
@@ -20,13 +30,6 @@ $(document).ready(function() {
 
     rows = $('#inputHeight').val();
     columns = $('#inputWidth').val();
-
-    // add touchscreen warning
-    var warningParagraph = '<p><small class="text-muted"><span class="';
-    warningParagraph += 'text-danger font-italic">Note</span>: This grid ';
-    warningParagraph += 'is currently optimized for mouse displays - ';
-    warningParagraph += 'touchscreens may not work as expected.</small></p>';
-    $('table').prev().after(warningParagraph);
 
     // create the table based on the grid values
     $('table').append('<tbody></tbody>');
