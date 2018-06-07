@@ -7,10 +7,6 @@ $(document).ready(function() {
   });
 
   $('#sizePicker').submit(makeGrid);
-  $('#sizePicker').on('reset', function(event) {
-    event.preventDefault();
-    $( 'table td' ).css('backgroundColor', 'white');
-  });
 
   function makeGrid(event) {
     event.preventDefault();
@@ -55,21 +51,27 @@ $(document).ready(function() {
       });
     });
 
-    $('table').on('mouseleave mouseup', function(event) {
     // for performance as recommended by the jQuery docs, the mousemove and
     // mouseup event handlers need to be detached once they're no longer needed
     // so I remove them when the mouse either
       // (1) leaves the table (mouseleave), or
       // (2) completes the drag motion within the table (mouseup)
+    $('table').on('mouseleave mouseup', function(event) {
       $('table').off('mousemove mouseup', 'td');
     });
+
+    // the drag event of the Drag and Drop API will sometimes coincide
+    // with (and override) the drag-and-draw effect I want to create, so
+    // I also deactivate `dragstart` when it fires
+    // see https://stackoverflow.com/a/13745199/7987987
     $('table').on('dragstart', function(event) {
-      // the drag event of the Drag and Drop API will sometimes coincide
-      // with (and override) the drag-and-draw effect I want to create, so
-      // I also deactivate `dragstart` when it fires
-      // see https://stackoverflow.com/a/13745199/7987987
       event.preventDefault();
       return false;
     });
   }
+
+  $('#sizePicker').on('reset', function(event) {
+    event.preventDefault();
+    $( 'table td' ).css('backgroundColor', 'white');
+  });
 });
