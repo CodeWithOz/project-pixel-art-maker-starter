@@ -76,7 +76,10 @@ $(document).ready(function() {
       return false;
     });
 
-    // scroll to top of table
+    scrollToTableTop();
+  }
+
+  function scrollToTableTop() {
     $('body, html').animate({
       scrollTop: $('table').prevAll('.canvasSubheading').offset().top
     });
@@ -85,5 +88,6 @@ $(document).ready(function() {
   $('#sizePicker').on('reset', function(event) {
     event.preventDefault();
     $( 'table td' ).css('backgroundColor', 'white');
+    scrollToTableTop();
   });
 });
