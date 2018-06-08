@@ -108,4 +108,9 @@ $(document).ready(function() {
     $( 'table td' ).css('backgroundColor', 'white');
     scrollToTableTop();
   });
+
+  $('.expandImg').click(function(event) {
+    event.preventDefault();
+    $('.modal').modal('show');
+  });
 });
