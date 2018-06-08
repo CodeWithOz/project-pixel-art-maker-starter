@@ -98,7 +98,7 @@ $(document).ready(function() {
     }, function () {
 			// Must change focus!
 			// Add tabindex then focus
-			$('table').attr('tabindex', '-1').focus();
+			$('.canvasSubheading').attr('tabindex', '-1').focus();
 		});
   }
 
