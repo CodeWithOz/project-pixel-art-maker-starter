@@ -11,14 +11,10 @@ $(document).ready(function() {
   function makeGrid(event) {
     event.preventDefault();
 
-    // add touchscreen warning if none exists
-    var warningParagraph = '<small class="text-muted"><span ';
-    warningParagraph += 'class="text-danger font-italic">Note</span>: ';
-    warningParagraph += 'This grid is currently optimized for mouse ';
-    warningParagraph += 'displays - touchscreens may not work as expected';
-    warningParagraph += '.</small>';
-
-    insertIfDoesntExist('warning', warningParagraph);
+    // add simple instruction for using the grid
+    var gridInstructions = 'Click, drag, <span class="font-weight-bold ';
+    gridInstructions += 'font-italic">draw!</span>';
+    insertIfDoesntExist('instructions', gridInstructions);
 
     function insertIfDoesntExist(selector, content) {
       if ($('.' + selector).length < 1) {
@@ -26,6 +22,14 @@ $(document).ready(function() {
         $('table').prev().after(paragraph);
       }
     }
+
+    // add touchscreen warning if none exists
+    var warningParagraph = '<small class="text-muted"><span ';
+    warningParagraph += 'class="text-danger font-italic">Note</span>: ';
+    warningParagraph += 'This grid is currently optimized for mouse ';
+    warningParagraph += 'displays - touchscreens may not work as expected';
+    warningParagraph += '.</small>';
+    insertIfDoesntExist('warning', warningParagraph);
 
     // remove current grid if one exists
     if ($('tbody').length > 0) {
