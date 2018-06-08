@@ -12,13 +12,19 @@ $(document).ready(function() {
     event.preventDefault();
 
     // add touchscreen warning if none exists
-    if ($('.warning').length < 1) {
-      var warningParagraph = '<p><small class="warning text-muted"><span ';
-      warningParagraph += 'class="text-danger font-italic">Note</span>: ';
-      warningParagraph += 'This grid is currently optimized for mouse ';
-      warningParagraph += 'displays - touchscreens may not work as expected';
-      warningParagraph += '.</small></p>';
-      $('table').prev().after(warningParagraph);
+    var warningParagraph = '<small class="text-muted"><span ';
+    warningParagraph += 'class="text-danger font-italic">Note</span>: ';
+    warningParagraph += 'This grid is currently optimized for mouse ';
+    warningParagraph += 'displays - touchscreens may not work as expected';
+    warningParagraph += '.</small>';
+
+    insertIfDoesntExist('warning', warningParagraph);
+
+    function insertIfDoesntExist(selector, content) {
+      if ($('.' + selector).length < 1) {
+        var paragraph = '<p class="' + selector + '">' + content + '</p>';
+        $('table').prev().after(paragraph);
+      }
     }
 
     // remove current grid if one exists
