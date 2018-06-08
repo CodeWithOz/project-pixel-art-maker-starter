@@ -25,7 +25,7 @@ $(document).ready(function() {
 
     // add touchscreen warning if none exists
     var warningParagraph = '<small class="text-muted"><span ';
-    warningParagraph += 'class="text-danger font-italic">Note</span>: ';
+    warningParagraph += 'class="text-danger font-italic">Note:</span> ';
     warningParagraph += 'This grid is currently optimized for mouse ';
     warningParagraph += 'displays - touchscreens may not work as expected';
     warningParagraph += '.</small>';
