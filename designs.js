@@ -103,6 +103,7 @@ $(document).ready(function() {
   }
 
   $('#sizePicker').on('reset', function(event) {
+    // stop form reset
     event.preventDefault();
     $( 'table td' ).css('backgroundColor', 'white');
     scrollToTableTop();
