@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var cellColor;
+  let cellColor;
 
   cellColor = $('#colorPicker').val();
   $('#colorPicker').change(function() {
@@ -12,7 +12,7 @@ $(document).ready(function() {
     event.preventDefault();
 
     // add simple instruction for using the grid
-    var gridInstructions = 'Click, drag, <span class="font-weight-bold ';
+    let gridInstructions = 'Click, drag, <span class="font-weight-bold ';
     gridInstructions += 'font-italic">draw!</span>';
     insertIfDoesntExist('instructions', gridInstructions);
 
@@ -25,13 +25,13 @@ $(document).ready(function() {
      */
     function insertIfDoesntExist(selector, content) {
       if ($('.' + selector).length < 1) {
-        var paragraph = '<p class="' + selector + '">' + content + '</p>';
+        const paragraph = '<p class="' + selector + '">' + content + '</p>';
         $('table').prev().after(paragraph);
       }
     }
 
     // add touchscreen warning if none exists
-    var warningParagraph = '<small class="text-muted"><span ';
+    let warningParagraph = '<small class="text-muted"><span ';
     warningParagraph += 'class="text-danger font-italic">Note:</span> ';
     warningParagraph += 'This grid is currently optimized for mouse ';
     warningParagraph += 'displays - touchscreens may not work as expected';
@@ -43,26 +43,24 @@ $(document).ready(function() {
       $('tbody').remove();
     }
 
-    var rows, columns;
-
-    rows = $('#inputHeight').val();
-    columns = $('#inputWidth').val();
+    const rows = $('#inputHeight').val();
+    const columns = $('#inputWidth').val();
 
     // create the table based on the grid values
     $('table').append('<tbody></tbody>');
     $('tbody').append(createGrid(rows, columns));
 
     function createGrid(rows, columns) {
-      var grid = '';
-      for (var counter = 0; counter < rows; counter++) {
+      let grid = '';
+      for (let counter = 0; counter < rows; counter++) {
         grid += createTableRow(columns);
       }
       return grid;
     }
 
     function createTableRow(columns) {
-      var tableRow = '<tr>';
-      for (var counter = 0; counter < columns; counter++) {
+      let tableRow = '<tr>';
+      for (let counter = 0; counter < columns; counter++) {
         tableRow += '<td></td>';
       }
       tableRow += '</tr>';
