@@ -12,8 +12,8 @@ $(document).ready(function() {
     event.preventDefault();
 
     // add simple instruction for using the grid
-    let gridInstructions = 'Click, drag, <span class="font-weight-bold ';
-    gridInstructions += 'font-italic">draw!</span>';
+    let gridInstructions = 'Click, drag, <span class="font-weight-bold ' +
+      'font-italic">draw!</span>';
     insertIfDoesntExist('instructions', gridInstructions);
 
     /**
@@ -31,11 +31,10 @@ $(document).ready(function() {
     }
 
     // add touchscreen warning if none exists
-    let warningParagraph = '<small class="text-muted"><span ';
-    warningParagraph += 'class="text-danger font-italic">Note:</span> ';
-    warningParagraph += 'This grid is currently optimized for mouse ';
-    warningParagraph += 'displays - touchscreens may not work as expected';
-    warningParagraph += '.</small>';
+    let warningParagraph = '<small class="text-muted"><span ' +
+      'class="text-danger font-italic">Note:</span> This grid is ' +
+      'currently optimized for mouse displays - touchscreens may ' +
+      'not work as expected.</small>';
     insertIfDoesntExist('warning', warningParagraph);
 
     // remove current grid if one exists
