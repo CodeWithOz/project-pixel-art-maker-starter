@@ -16,6 +16,13 @@ $(document).ready(function() {
     gridInstructions += 'font-italic">draw!</span>';
     insertIfDoesntExist('instructions', gridInstructions);
 
+    /**
+     * @description Inserts an element if it doesn't already exist in the DOM
+     * The new element is added before the table element.
+     * @param {string} selector - CSS class name for the element
+     * @param {string} content
+     * @return {undefined}
+     */
     function insertIfDoesntExist(selector, content) {
       if ($('.' + selector).length < 1) {
         var paragraph = '<p class="' + selector + '">' + content + '</p>';
@@ -89,6 +96,7 @@ $(document).ready(function() {
       return false;
     });
 
+    // scroll to the top of the grid
     scrollToTableTop();
   }
 
