@@ -104,10 +104,10 @@ $(document).ready(function() {
     $('body, html').animate({
       scrollTop: $('table').prevAll('.canvasSubheading').offset().top
     }, function () {
-			// Must change focus!
-			// Add tabindex then focus
-			$('.canvasSubheading').attr('tabindex', '-1').focus();
-		});
+      // Must change focus!
+      // Add tabindex then focus
+      $('.canvasSubheading').attr('tabindex', '-1').focus();
+    });
   }
 
   $('#sizePicker').on('reset', function(event) {
