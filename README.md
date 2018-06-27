@@ -1,5 +1,6 @@
 # Pixel Art Maker Project
 
+As done by Uchechukwu Ozoemena. Forked from the original Udacity repository.
 * Live demo: [Click here](https://codewithoz.github.io/project-pixel-art-maker-starter/)
 
 ## Table of Contents
