@@ -71,6 +71,8 @@ $(document).ready(function() {
     // so add mousemove and mouseup handlers only after mousedown has fired
     $('table').mousedown(function(event) {
       $('table').on('mousemove mouseup', 'td', function(event) {
+        // this also handles clicking a grid square because a click event
+        // is mousedown followed by mouseup
         $( this ).css('backgroundColor', cellColor);
       });
     });
