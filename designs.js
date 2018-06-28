@@ -109,6 +109,7 @@ $(document).ready(function() {
     });
   }
 
+  // reset colors when reset button is clicked
   $('#sizePicker').on('reset', function(event) {
     // stop form reset
     event.preventDefault();
@@ -116,6 +117,7 @@ $(document).ready(function() {
     scrollToTableTop();
   });
 
+  // expand sample image when it's clicked
   $('.expandImg').click(function(event) {
     event.preventDefault();
     $('.modal').modal('show');
