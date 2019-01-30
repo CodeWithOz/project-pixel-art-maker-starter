@@ -1,12 +1,15 @@
 # Pixel Art Maker Project
 
-As done by Uchechukwu Ozoemena. Forked from the original Udacity repository.
-* Live demo: [Click here](https://codewithoz.github.io/project-pixel-art-maker-starter/)
+![Pixel art maker screenshot](pixel_art_maker,jpg)
+
+Sample expertly drawn by [Ubiquity-Grisso](https://github.com/Ubiquity-Grisso)
+
+- Live demo: [Click here](https://codewithoz.github.io/project-pixel-art-maker-starter/)
 
 ## Table of Contents
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+- [Instructions](#instructions)
+- [Contributing](#contributing)
 
 ## Instructions
 
