@@ -1,10 +1,9 @@
 # Pixel Art Maker Project
 
-![Pixel art maker screenshot](pixel_art_maker,jpg)
-
+![Pixel art maker screenshot](pixel_art_maker.jpg)
 Sample expertly drawn by [Ubiquity-Grisso](https://github.com/Ubiquity-Grisso)
 
-- Live demo: [Click here](https://codewithoz.github.io/project-pixel-art-maker-starter/)
+**Live demo**: [Click here](https://codewithoz.github.io/project-pixel-art-maker-starter/)
 
 ## Table of Contents
 
